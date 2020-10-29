@@ -22,4 +22,6 @@ public interface IUnidadService {
     public UnidadDTO create(UnidadDTO doctor);
 
     public Optional<UnidadDTO> update(UnidadDTO doctor, Long id);
+    
+    public void delete(Long id);
 }

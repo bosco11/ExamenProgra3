@@ -22,4 +22,6 @@ public interface ICantonService {
     public CantonDTO create(CantonDTO doctor);
 
     public Optional<CantonDTO> update(CantonDTO doctor, Long id);
+    
+    public void delete(Long id);
 }

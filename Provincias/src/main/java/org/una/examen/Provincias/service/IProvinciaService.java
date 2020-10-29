@@ -22,4 +22,6 @@ public interface IProvinciaService {
     public ProvinciaDTO create(ProvinciaDTO doctor);
 
     public Optional<ProvinciaDTO> update(ProvinciaDTO doctor, Long id);
+    
+    public void delete(Long id);
 }

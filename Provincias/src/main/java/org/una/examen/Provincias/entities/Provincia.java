@@ -43,9 +43,6 @@ public class Provincia implements Serializable{
     @Column(length = 25, unique = true)
     private String codigo;
     
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "provinciaId")
-    private List<Canton> cantones = new ArrayList<>();
-    
     @Column
     private boolean estado;
     

@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.una.examen.Provincias.dto.CantonDTO;
 import org.una.examen.Provincias.entities.Canton;
 import org.una.examen.Provincias.repositories.ICantonRepository;
@@ -50,6 +51,12 @@ public class CantonServiceImplementation implements ICantonService{
         } else {
             return null;
         }
+    }
+    
+    @Override
+    @Transactional
+    public void delete(Long id) {
+        ICantonRepository.deleteById(id);
     }
     
 }

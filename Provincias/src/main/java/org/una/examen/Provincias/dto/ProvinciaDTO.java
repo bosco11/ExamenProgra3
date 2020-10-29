@@ -20,5 +20,4 @@ public class ProvinciaDTO {
     private String nombreProvincia;
     private String codigo;
     private boolean estado;
-    private List<CantonDTO> cantones;
 }

@@ -22,4 +22,6 @@ public interface IDistritoService {
     public DistritoDTO create(DistritoDTO doctor);
 
     public Optional<DistritoDTO> update(DistritoDTO doctor, Long id);
+    
+    public void delete(Long id);
 }

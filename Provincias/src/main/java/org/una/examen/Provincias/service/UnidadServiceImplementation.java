@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.una.examen.Provincias.dto.UnidadDTO;
 import org.una.examen.Provincias.entities.Unidad;
 import org.una.examen.Provincias.repositories.IUnidadRepository;
@@ -50,6 +51,12 @@ public class UnidadServiceImplementation implements IUnidadService{
         } else {
             return null;
         }
+    }
+    
+    @Override
+    @Transactional
+    public void delete(Long id) {
+        IUnidadRepository.deleteById(id);
     }
     
 }
