@@ -5,6 +5,7 @@
  */
 package org.una.examen.Provincias.repositories;
 
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.una.examen.Provincias.entities.Distrito;
 
@@ -13,5 +14,5 @@ import org.una.examen.Provincias.entities.Distrito;
  * @author Bosco
  */
 public interface IDistritoRepository extends JpaRepository<Distrito, Long>{
-    
+    public List<Distrito>  findByEstado(boolean estado);
 }

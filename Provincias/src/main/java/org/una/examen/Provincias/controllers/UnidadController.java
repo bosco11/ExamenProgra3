@@ -97,4 +97,13 @@ public class UnidadController {
         }
     }
     
+    @GetMapping("/estado/{term}")
+    public ResponseEntity<?> findByEstadoContaining(@PathVariable(value = "term") boolean term) {
+        try {
+            return new ResponseEntity<>(IUnidadService.findByEstado(term), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
 }

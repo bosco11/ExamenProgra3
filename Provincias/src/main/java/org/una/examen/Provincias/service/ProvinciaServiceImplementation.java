@@ -45,7 +45,7 @@ public class ProvinciaServiceImplementation implements IProvinciaService{
     @Override
     public Optional<ProvinciaDTO> update(ProvinciaDTO provincia, Long id) {
         if (IProvinciaRepository.findById(id).isPresent()) {
-            Provincia pro = MapperUtils.EntityFromDto(IProvinciaRepository, Provincia.class);
+            Provincia pro = MapperUtils.EntityFromDto(provincia, Provincia.class);
             pro = IProvinciaRepository.save(pro);
             return Optional.ofNullable(MapperUtils.DtoFromEntity(pro, ProvinciaDTO.class));
         } else {
@@ -58,5 +58,11 @@ public class ProvinciaServiceImplementation implements IProvinciaService{
     public void delete(Long id) {
         IProvinciaRepository.deleteById(id);
     }
-    
+
+    @Override
+    @Transactional(readOnly = true)
+    public Optional<List<ProvinciaDTO>> findByEstado(boolean estado) {
+        return (Optional<List<ProvinciaDTO>>) ConversionLista.findList(Optional.ofNullable(IProvinciaRepository.findByEstado(estado)), ProvinciaDTO.class);
+    }
+
 }

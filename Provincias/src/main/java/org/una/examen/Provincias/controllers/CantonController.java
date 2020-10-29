@@ -95,4 +95,13 @@ public class CantonController {
             return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    
+    @GetMapping("/estado/{term}")
+    public ResponseEntity<?> findByEstadoContaining(@PathVariable(value = "term") boolean term) {
+        try {
+            return new ResponseEntity<>(ICantonService.findByEstado(term), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

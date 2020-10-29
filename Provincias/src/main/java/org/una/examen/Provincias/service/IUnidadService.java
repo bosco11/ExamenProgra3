@@ -24,4 +24,6 @@ public interface IUnidadService {
     public Optional<UnidadDTO> update(UnidadDTO doctor, Long id);
     
     public void delete(Long id);
+    
+    public Optional<List<UnidadDTO>> findByEstado(boolean estado);
 }

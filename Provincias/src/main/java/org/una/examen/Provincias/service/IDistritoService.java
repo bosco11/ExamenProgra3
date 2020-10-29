@@ -24,4 +24,6 @@ public interface IDistritoService {
     public Optional<DistritoDTO> update(DistritoDTO doctor, Long id);
     
     public void delete(Long id);
+    
+    public Optional<List<DistritoDTO>> findByEstado(boolean estado);
 }

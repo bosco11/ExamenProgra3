@@ -86,6 +86,15 @@ public class ProvinciaController {
         }
     }
     
+    @GetMapping("/estado/{term}")
+    public ResponseEntity<?> findByEstadoContaining(@PathVariable(value = "term") boolean term) {
+        try {
+            return new ResponseEntity<>(IProvinciaService.findByEstado(term), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable(value = "id") Long id) {
         try {

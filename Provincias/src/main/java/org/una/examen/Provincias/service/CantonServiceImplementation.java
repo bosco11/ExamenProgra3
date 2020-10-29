@@ -58,5 +58,10 @@ public class CantonServiceImplementation implements ICantonService{
     public void delete(Long id) {
         ICantonRepository.deleteById(id);
     }
+
+    @Override
+    public Optional<List<CantonDTO>> findByEstado(boolean estado) {
+        return (Optional<List<CantonDTO>>) ConversionLista.findList(Optional.ofNullable(ICantonRepository.findByEstado(estado)), CantonDTO.class);
+    }
     
 }

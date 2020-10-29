@@ -5,6 +5,7 @@
  */
 package org.una.examen.Provincias.repositories;
 
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.una.examen.Provincias.entities.Canton;
 
@@ -13,5 +14,5 @@ import org.una.examen.Provincias.entities.Canton;
  * @author Bosco
  */
 public interface ICantonRepository extends JpaRepository<Canton, Long>{
-    
+    public List<Canton>  findByEstado(boolean estado);
 }

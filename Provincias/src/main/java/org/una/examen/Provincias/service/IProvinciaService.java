@@ -19,9 +19,11 @@ public interface IProvinciaService {
 
     public Optional<ProvinciaDTO> findById(Long id);
 
-    public ProvinciaDTO create(ProvinciaDTO doctor);
+    public ProvinciaDTO create(ProvinciaDTO provincia);
 
-    public Optional<ProvinciaDTO> update(ProvinciaDTO doctor, Long id);
+    public Optional<ProvinciaDTO> update(ProvinciaDTO provincia, Long id);
     
     public void delete(Long id);
+    
+    public Optional<List<ProvinciaDTO>> findByEstado(boolean estado);
 }

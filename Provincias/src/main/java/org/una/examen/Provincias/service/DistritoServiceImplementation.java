@@ -58,5 +58,10 @@ public class DistritoServiceImplementation implements IDistritoService{
     public void delete(Long id) {
         IDistritoRepository.deleteById(id);
     }
+
+    @Override
+    public Optional<List<DistritoDTO>> findByEstado(boolean estado) {
+        return (Optional<List<DistritoDTO>>) ConversionLista.findList(Optional.ofNullable(IDistritoRepository.findByEstado(estado)), DistritoDTO.class);
+    }
     
 }
