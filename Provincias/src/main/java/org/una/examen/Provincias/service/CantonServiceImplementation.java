@@ -21,14 +21,15 @@ import org.una.examen.Provincias.utils.MapperUtils;
  * @author Bosco
  */
 @Service
-public class CantonServiceImplementation implements ICantonService{
+public class CantonServiceImplementation implements ICantonService {
 
     @Autowired
     private ICantonRepository ICantonRepository;
-    
+
     @Override
     public Optional<List<CantonDTO>> findAll() {
-        return (Optional<List<CantonDTO>>) ConversionLista.findList((ICantonRepository.findAll()), CantonDTO.class);    }
+        return (Optional<List<CantonDTO>>) ConversionLista.findList((ICantonRepository.findAll()), CantonDTO.class);
+    }
 
     @Override
     public Optional<CantonDTO> findById(Long id) {
@@ -52,7 +53,7 @@ public class CantonServiceImplementation implements ICantonService{
             return null;
         }
     }
-    
+
     @Override
     @Transactional
     public void delete(Long id) {
@@ -63,5 +64,9 @@ public class CantonServiceImplementation implements ICantonService{
     public Optional<List<CantonDTO>> findByEstado(boolean estado) {
         return (Optional<List<CantonDTO>>) ConversionLista.findList(Optional.ofNullable(ICantonRepository.findByEstado(estado)), CantonDTO.class);
     }
-    
+
+    @Override
+    public Optional<List<CantonDTO>> findProvinciaCantonId(Long id) {
+        return (Optional<List<CantonDTO>>) ConversionLista.findList(ICantonRepository.findProvinciaCantonId(id), CantonDTO.class);
+    }
 }

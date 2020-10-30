@@ -106,4 +106,14 @@ public class UnidadController {
         }
     }
     
+    @GetMapping("/distritoId/{id}")
+    public ResponseEntity<?> findByUnidadId(@PathVariable(value = "id") Long id) {
+        try {
+            return new ResponseEntity(IUnidadService.findDistritoUnidadId(id), HttpStatus.OK);
+
+        } catch (Exception e) {
+            return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
 }

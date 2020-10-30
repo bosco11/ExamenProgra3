@@ -63,5 +63,10 @@ public class DistritoServiceImplementation implements IDistritoService{
     public Optional<List<DistritoDTO>> findByEstado(boolean estado) {
         return (Optional<List<DistritoDTO>>) ConversionLista.findList(Optional.ofNullable(IDistritoRepository.findByEstado(estado)), DistritoDTO.class);
     }
+
+    @Override
+    public Optional<List<DistritoDTO>> findCantonDistritoId(Long id) {
+        return (Optional<List<DistritoDTO>>) ConversionLista.findList(IDistritoRepository.findCantonDistritoId(id), DistritoDTO.class);
+    }
     
 }

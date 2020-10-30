@@ -26,4 +26,6 @@ public interface ICantonService {
     public void delete(Long id);
     
     public Optional<List<CantonDTO>> findByEstado(boolean estado);
+    
+    public Optional<List<CantonDTO>> findProvinciaCantonId(Long id);
 }

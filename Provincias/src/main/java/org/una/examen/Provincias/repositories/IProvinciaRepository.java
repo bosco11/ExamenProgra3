@@ -16,4 +16,5 @@ import org.una.examen.Provincias.entities.Provincia;
  */
 public interface IProvinciaRepository extends JpaRepository<Provincia, Long>{
    public List<Provincia>  findByEstado(boolean estado);
+   
 }

@@ -64,5 +64,10 @@ public class UnidadServiceImplementation implements IUnidadService{
     public Optional<List<UnidadDTO>> findByEstado(boolean estado) {
         return (Optional<List<UnidadDTO>>) ConversionLista.findList(Optional.ofNullable(IUnidadRepository.findByEstado(estado)), UnidadDTO.class);
     }
+
+    @Override
+    public Optional<List<UnidadDTO>> findDistritoUnidadId(Long id) {
+        return (Optional<List<UnidadDTO>>) ConversionLista.findList(IUnidadRepository.findDistritoUnidadId(id), UnidadDTO.class);
+    }
     
 }

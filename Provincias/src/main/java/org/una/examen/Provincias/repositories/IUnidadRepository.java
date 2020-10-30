@@ -7,6 +7,8 @@ package org.una.examen.Provincias.repositories;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.una.examen.Provincias.entities.Unidad;
 
 /**
@@ -15,4 +17,7 @@ import org.una.examen.Provincias.entities.Unidad;
  */
 public interface IUnidadRepository extends JpaRepository<Unidad, Long>{
     public List<Unidad>  findByEstado(boolean estado);
+    
+    @Query("SELECT u FROM Unidad u LEFT JOIN u.distritoId d WHERE  d.id=:id ORDER BY u.codigo ASC")
+    public List<Unidad> findDistritoUnidadId(@Param("id") Long id);
 }

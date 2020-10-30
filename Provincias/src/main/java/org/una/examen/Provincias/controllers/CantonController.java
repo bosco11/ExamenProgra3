@@ -96,6 +96,16 @@ public class CantonController {
         }
     }
     
+    @GetMapping("/provinciaId/{id}")
+    public ResponseEntity<?> findByCantonId(@PathVariable(value = "id") Long id) {
+        try {
+            return new ResponseEntity(ICantonService.findProvinciaCantonId(id), HttpStatus.OK);
+
+        } catch (Exception e) {
+            return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
     @GetMapping("/estado/{term}")
     public ResponseEntity<?> findByEstadoContaining(@PathVariable(value = "term") boolean term) {
         try {

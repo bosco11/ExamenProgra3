@@ -26,4 +26,6 @@ public interface IDistritoService {
     public void delete(Long id);
     
     public Optional<List<DistritoDTO>> findByEstado(boolean estado);
+    
+    public Optional<List<DistritoDTO>> findCantonDistritoId(Long id);
 }

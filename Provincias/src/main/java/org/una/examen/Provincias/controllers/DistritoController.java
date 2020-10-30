@@ -104,4 +104,14 @@ public class DistritoController {
             return new ResponseEntity<>(e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    
+    @GetMapping("/cantonId/{id}")
+    public ResponseEntity<?> findByDistritoId(@PathVariable(value = "id") Long id) {
+        try {
+            return new ResponseEntity(IDistritoService.findCantonDistritoId(id), HttpStatus.OK);
+
+        } catch (Exception e) {
+            return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }
