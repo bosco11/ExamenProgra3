@@ -52,12 +52,6 @@ public class ProvinciaServiceImplementation implements IProvinciaService{
             return null;
         }
     }
-    
-    @Override
-    @Transactional
-    public void delete(Long id) {
-        IProvinciaRepository.deleteById(id);
-    }
 
     @Override
     @Transactional(readOnly = true)

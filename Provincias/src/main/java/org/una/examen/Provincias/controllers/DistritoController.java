@@ -86,15 +86,6 @@ public class DistritoController {
             return new ResponseEntity(MENSAJE_VERIFICAR_INFORMACION, HttpStatus.BAD_REQUEST);
         }
     }
-    @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable(value = "id") Long id) {
-        try {
-            IDistritoService.delete(id);
-            return new ResponseEntity(HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
     
     @GetMapping("/estado/{term}")
     public ResponseEntity<?> findByEstadoContaining(@PathVariable(value = "term") boolean term) {

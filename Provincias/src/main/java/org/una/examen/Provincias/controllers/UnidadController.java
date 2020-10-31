@@ -87,15 +87,6 @@ public class UnidadController {
         }
     }
     
-    @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable(value = "id") Long id) {
-        try {
-            IUnidadService.delete(id);
-            return new ResponseEntity(HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
     
     @GetMapping("/estado/{term}")
     public ResponseEntity<?> findByEstadoContaining(@PathVariable(value = "term") boolean term) {

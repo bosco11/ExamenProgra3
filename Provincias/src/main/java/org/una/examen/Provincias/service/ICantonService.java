@@ -23,8 +23,6 @@ public interface ICantonService {
 
     public Optional<CantonDTO> update(CantonDTO doctor, Long id);
     
-    public void delete(Long id);
-    
     public Optional<List<CantonDTO>> findByEstado(boolean estado);
     
     public Optional<List<CantonDTO>> findProvinciaCantonId(Long id);

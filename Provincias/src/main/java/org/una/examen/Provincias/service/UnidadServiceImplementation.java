@@ -53,12 +53,6 @@ public class UnidadServiceImplementation implements IUnidadService{
             return null;
         }
     }
-    
-    @Override
-    @Transactional
-    public void delete(Long id) {
-        IUnidadRepository.deleteById(id);
-    }
 
     @Override
     public Optional<List<UnidadDTO>> findByEstado(boolean estado) {

@@ -95,13 +95,4 @@ public class ProvinciaController {
         }
     }
     
-    @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable(value = "id") Long id) {
-        try {
-            IProvinciaService.delete(id);
-            return new ResponseEntity(HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
 }

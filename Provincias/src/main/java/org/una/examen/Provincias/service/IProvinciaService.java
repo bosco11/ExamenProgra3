@@ -23,7 +23,5 @@ public interface IProvinciaService {
 
     public Optional<ProvinciaDTO> update(ProvinciaDTO provincia, Long id);
     
-    public void delete(Long id);
-    
     public Optional<List<ProvinciaDTO>> findByEstado(boolean estado);
 }
